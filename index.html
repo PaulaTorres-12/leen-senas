@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Leen-Señas</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/app.js" defer></script>
+</head>
+<body>
+
+<!-- 1. INICIO 1 -->
+<section class="scr navy" data-s="inicio1"></section>
+
+<!-- 2. INICIO 2 -->
+<section class="scr navy" data-s="inicio2">
+  <img class="logo sm" src="assets/logo.svg" alt="Leen-Señas">
+  <div class="stick"></div>
+</section>
+
+<!-- 3. INICIO 3 -->
+<section class="scr s3" data-s="inicio3">
+  <img class="logo" src="assets/logo.svg" alt="Leen-Señas">
+  <h2>Hasta que la inclusión se haga <b>costumbre</b></h2>
+</section>
+
+<!-- 4. LOGIN -->
+<section class="scr auth login" data-s="login">
+  <form class="form" onsubmit="event.preventDefault();location.hash='home'">
+    <input class="in" type="email" placeholder="Correo Electrónico">
+    <input class="in" type="password" placeholder="Contraseña">
+    <button class="btn" type="submit">Ingresar</button>
+    <button class="lnk" type="button" data-go="registro">Registrarse</button>
+  </form>
+</section>
+
+<!-- 5. REGISTRO -->
+<section class="scr auth reg" data-s="registro">
+  <button class="x" data-go="login" aria-label="Cerrar">X</button>
+  <form class="form" onsubmit="event.preventDefault();location.hash='home'">
+    <div class="fields">
+      <input class="in" placeholder="Primer nombre">
+      <input class="in" placeholder="Segundo nombre">
+      <input class="in" type="email" placeholder="Correo Electrónico">
+      <input class="in" type="password" placeholder="Contraseña">
+      <input class="in" type="password" placeholder="Repetir contraseña">
+    </div>
+    <div class="bottom">
+      <button class="btn" type="submit">Registrarse</button>
+      <button class="lnk" type="button" data-go="login">Ingresar</button>
+    </div>
+  </form>
+</section>
+
+<!-- APP (pantallas con barra inferior) -->
+<div class="app" id="app">
+<main class="pane">
+
+<!-- 6. HOME -->
+<section class="scr" data-s="home">
+  <div class="hero">
+    <div class="vid ph" style="--img:url(assets/img/home-clase.jpg)"></div>
+    <div class="hero-row"><b>Clase 1: Abecedario</b><button class="play" aria-label="Reproducir"></button></div>
+    <small>Continúa donde lo dejaste</small>
+  </div>
+  <div class="tabs" id="tabs">
+    <a href="#clases">Clases</a><a href="#home" class="on">Juegos</a><a href="#evalua">Evalúate</a><a href="#grabadas">Clases grabadas</a>
+  </div>
+  <div class="games">
+    <a class="g g1" href="#detalle"><img src="assets/que-sena-es.png" alt=""><span>¿Qué seña es?</span><i></i></a>
+    <a class="g g2" href="#detalle"><img src="assets/haz-la-sena.png" alt=""><span>¡Haz la seña!</span><i></i></a>
+    <a class="g g3" href="#detalle"><img src="assets/mas-veloz.png" alt=""><span>Más veloz</span><i></i></a>
+    <a class="g g4" href="#detalle"><img src="assets/abc-manos.png" alt=""><span>ABC o manos?</span><i></i></a>
+  </div>
+</section>
+
+<!-- 7. CLASES -->
+<section class="scr pink" data-s="clases">
+  <div class="top"><button class="back" data-go="home">‹</button><h3>Aprende +</h3></div>
+  <div class="wrap"><div class="list two" id="lista-clases"></div></div>
+</section>
+
+<!-- 8. CLASES GRABADAS -->
+<section class="scr" data-s="grabadas">
+  <div class="top"><button class="back" data-go="home">‹</button><h3>Conecta con LSC</h3></div>
+  <div class="wrap"><div class="list two" id="vids"></div></div>
+</section>
+
+<!-- 9. EVALÚATE -->
+<section class="scr" data-s="evalua">
+  <div class="top"><button class="back" data-go="home">‹</button><span class="chip">Pon aprueba tu <b><i>Conocimiento</i></b></span></div>
+  <div class="wrap">
+    <p class="intro">Responde 5 preguntas y sube de nivel, cada respuesta correcta vale 20 puntos</p>
+    <div class="ev">
+      <div><span class="sq" style="background:#cdeed8"><img src="assets/evaluate/preguntas.png" alt=""></span><p>5 preguntas de opción múltiple</p></div>
+      <div><span class="sq" style="background:#dfe3ff"><img src="assets/evaluate/100xp.png" alt=""></span><p>Hasta 100 XP<br>por evaluación</p></div>
+      <div><span class="sq" style="background:#f5d6ff"><img src="assets/evaluate/subenivel.png" alt=""></span><p>Sube de nivel y guarda<br>el progreso</p></div>
+    </div>
+  </div>
+  <div class="cta"><button class="btn" data-go="progreso">¡A jugar!</button></div>
+</section>
+
+<!-- 10. PROGRESO -->
+<section class="scr prog" data-s="progreso">
+  <div class="phead">
+    <h2>Mi Progreso</h2>
+    <div class="stats">
+      <div><b>1</b>Nivel</div><div><b>200</b>XP Total</div><div><b>3</b>Insignias</div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="lvl"><div class="lr"><span>Nivel 1 - Nivel 2</span><span>250 XP</span></div>
+      <div class="meter"><span style="width:80%"></span></div><small>50 XP para el siguiente nivel</small></div>
+    <h4 class="ins">Insignias</h4>
+    <div class="badges" id="badges"></div>
+  </div>
+  <div class="cta"><button class="btn" data-go="detalle">¡A jugar!</button></div>
+</section>
+
+<!-- 11. DETALLES DEL JUEGO -->
+<section class="scr" data-s="detalle">
+  <div class="top"><button class="back" data-go="home">‹</button></div>
+  <div class="wrap">
+    <div class="flash ph" style="--img:url(assets/img/flashcards.jpg)"><span>Nivel: Hola</span></div>
+    <div class="trow"><h3>Flashcards</h3><span class="tag">▢</span></div>
+    <p class="meta">◷ 120 cartas &nbsp;★ 5</p>
+    <div class="cols"><div><small>Fecha</small><p>Agosto 17, 2024</p></div>
+      <div><small>Clasificación</small><p><span class="pill y">Vocabulario</span> <span class="pill y">Básico</span></p></div></div>
+    <h4>Sinopsis</h4>
+    <p class="syn">Aprende y repasa el vocabulario básico de lengua de señas mediante tarjetas interactivas. Observa la seña, piensa su significado y revisa si fue correcta para avanzar de nivel.</p>
+  </div>
+  <div class="cta"><button class="btn" onclick="alert('¡Comienza el juego!')">¡A jugar!</button></div>
+</section>
+
+<!-- 12. PERFIL -->
+<section class="scr" data-s="perfil">
+  <div class="top"><button class="back" data-go="home">‹</button><h3>Profile</h3></div>
+  <div class="wrap center">
+    <svg class="ava" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="4.6"/><path d="M2.5 22c0-5.2 4.2-8.4 9.5-8.4s9.5 3.2 9.5 8.4z"/></svg>
+    <b>Perfil</b><p class="mail">correo@gmail.com</p>
+    <input class="fld" placeholder="Primer nombre"><input class="fld" placeholder="Segundo nombre">
+    <input class="fld" type="email" placeholder="Correo electrónico"><input class="fld" type="tel" placeholder="Número de celular">
+    <button class="btn" onclick="alert('Perfil actualizado')">Actualizar perfil</button>
+    <button class="lnk out" data-go="login">Cerrar sesión</button>
+  </div>
+</section>
+
+</main>
+
+<nav class="nav" id="nav" aria-label="Principal">
+  <a href="#home" data-t="home"><img src="assets/nav/home.png" alt="Inicio"></a>
+  <a href="#clases" data-t="clases"><img src="assets/nav/clases.png" alt="Clases"></a>
+  <a href="#progreso" data-t="progreso"><img src="assets/nav/progreso.png" alt="Progreso"></a>
+  <a href="#perfil" data-t="perfil"><img src="assets/nav/perfil.png" alt="Perfil"></a>
+</nav>
+</div>
+
+</body>
+</html>
