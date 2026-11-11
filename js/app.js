@@ -2,6 +2,7 @@ const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
 /* ---------- Datos (edita aquí los textos) ---------- */
+/*mi primer repositorio*/
 const clases = [
   ['saludosbasicos', 'Saludos Básicos', 'Principiante', '#fff1b8'],
   ['numeros',        'Números: 1 - 10', 'Principiante', '#ffd9b3'],
